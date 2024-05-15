@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from "react";
-import PhotosService from "../services/Photos.service";
+import PhotosService from "../../services/Photos.service";
 
 export default function Page() {
     useEffect(() => {
