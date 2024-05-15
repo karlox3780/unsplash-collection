@@ -1,4 +1,5 @@
 "use client"
+import "./page.css";
 import { useEffect } from "react";
 import PhotosService from "../../services/Photos.service";
 
@@ -14,6 +15,8 @@ export default function Page() {
     }, [])
 
     return (
-        <></>
+        <div className="searchPage">
+
+        </div>
     );
 }
