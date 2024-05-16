@@ -1,6 +1,20 @@
 .searchPage {
-    background: url('../../../public/images/hero-image.png');
+    position: absolute;
+    background: url('../../../public/images/hero-image.png') no-repeat center;
     background-size: contain;
     height: calc(100vh - 93px);
     width: 100%;
+}
+
+.searchPage_input {
+    background: url(/_next/static/media/Search.267c11f2.svg) no-repeat 98%;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    width: 40vw;
+    margin-top: 24px;
+    padding: 16px 15px;
+}
+
+.searchPage_input:focus {
+    outline: none;
 }

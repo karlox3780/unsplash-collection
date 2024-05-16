@@ -16,7 +16,13 @@ export default function Page() {
 
     return (
         <div className="searchPage">
-
+            <div className="searchPage_title flex flex-col items-center mt-[240px]">
+                <h1 className="text-[#121826] text-[36px] font-semibold">Search</h1>
+                <h2 className="text-[#121826] text-[16px] font-medium mt-[8px]">Search high-resolution images from Unsplash</h2>
+                <form>
+                    <input className="searchPage_input text-[#E5E7EB] text-[16px] font-medium" type="text" name="name" placeholder="Enter your keywords..." />
+                </form>
+            </div>
         </div>
     );
 }
