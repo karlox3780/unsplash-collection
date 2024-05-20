@@ -7,7 +7,7 @@
 }
 
 .searchPage_input {
-    background: url(/_next/static/media/Search.267c11f2.svg) no-repeat 98%;
+    background: url('../../../public/images/Search.svg') no-repeat 98%;
     border-radius: 8px;
     border: 1px solid #E5E7EB;
     width: 40vw;
@@ -17,4 +17,10 @@
 
 .searchPage_input:focus {
     outline: none;
+}
+
+@media screen and (max-width: 640px) {
+    .searchPage_input {
+        width: 80vw;
+    }
 }
