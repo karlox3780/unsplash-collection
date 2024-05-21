@@ -23,4 +23,8 @@
     .searchPage_input {
         width: 80vw;
     }
+
+    .searchPage {
+        background-position: 40%;
+    }
 }
