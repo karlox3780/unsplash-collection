@@ -25,7 +25,6 @@
     }
 
     .searchPage {
-        background-position: 40%;
-        background-size: cover;
+        background: none;
     }
 }
