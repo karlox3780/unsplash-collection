@@ -15,6 +15,11 @@
     padding: 16px 15px;
 }
 
+.searchPage_background_left_mobile,
+.searchPage_background_right_mobile {
+    display: none;
+}
+
 .searchPage_input:focus {
     outline: none;
 }
@@ -27,4 +32,22 @@
     .searchPage {
         background: none;
     }
+
+    .searchPage_background_left_mobile,
+    .searchPage_background_right_mobile {
+        position: absolute;
+        top: 0;
+        display: block;
+        min-width: 537px;
+        min-height: 797px;
+    }
+
+    .searchPage_background_left_mobile {
+        left: -509px;
+    }
+
+    .searchPage_background_right_mobile {
+        right: -509px;
+    }
+
 }
