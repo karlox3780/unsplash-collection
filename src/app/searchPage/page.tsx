@@ -1,19 +1,30 @@
 "use client"
 import "./page.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PhotosService from "../../services/Photos.service";
 import Image from "next/image";
 
 export default function Page() {
+    const [searchImageState, setSearchImageState] = useState("");
+    const [formState, setFormState] = useState({});
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        setSearchImageState(e.target.value)
+    }
+    const handleChange = (e: any) => {
+        setFormState({ ...formState, [e.target.name]: e.target.value });
+    }
     useEffect(() => {
-        PhotosService
-            .getPhotos()
+        console.log(searchImageState)
+        searchImageState && PhotosService
+            .getPhotos(searchImageState)
             .then((res) => {
                 console.log(res);
             })
             .catch((err) => console.log(err))
             .finally(() => { });
-    }, [])
+    }, [searchImageState])
 
     return (
         <div className="searchPage">
@@ -22,8 +33,8 @@ export default function Page() {
                 <Image className="searchPage_background_right_mobile" src='/images/hero-right.png' alt="Mobile background right image" height={797} width={537} />
                 <h1 className="text-[#121826] text-[36px] font-semibold">Search</h1>
                 <h2 className="text-[#121826] text-[16px] font-medium mt-[8px]">Search high-resolution images from Unsplash</h2>
-                <form>
-                    <input className="searchPage_input text-[#E5E7EB] text-[16px] font-medium" type="text" name="name" placeholder="Enter your keywords..." />
+                <form onSubmit={handleSubmit}>
+                    <input className="searchPage_input text-[#E5E7EB] text-[16px] font-medium" type="text" name="name" placeholder="Enter your keywords..." onChange={handleChange} />
                 </form>
             </div>
         </div>

@@ -2,10 +2,10 @@ import InitAxios from './InitAxios.service';
 
 class Photos extends InitAxios {
     constructor() {
-        super("photos");
+        super("/search/photos");
     }
-    getPhotos() {
-        return this.axios.get('', { params: { client_id: process.env.NEXT_PUBLIC_ACCESS_KEY } })
+    getPhotos(searchImage: string) {
+        return this.axios.get('', { params: { query: searchImage, client_id: process.env.NEXT_PUBLIC_ACCESS_KEY } })
             .then((response) => response.data)
             .catch(function (error) { console.log('Error', error.message); });
     }
