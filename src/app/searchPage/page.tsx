@@ -6,17 +6,21 @@ import Image from "next/image";
 
 export default function Page() {
     const [searchImageState, setSearchImageState] = useState("");
-    const [formState, setFormState] = useState({});
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        setSearchImageState(e.target.value)
+        PhotosService
+            .getPhotos(searchImageState)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => console.log(err))
+            .finally(() => { });
     }
     const handleChange = (e: any) => {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        setSearchImageState(e.target.value);
     }
-    useEffect(() => {
-        console.log(searchImageState)
+    /*useEffect(() => {
         searchImageState && PhotosService
             .getPhotos(searchImageState)
             .then((res) => {
@@ -24,7 +28,7 @@ export default function Page() {
             })
             .catch((err) => console.log(err))
             .finally(() => { });
-    }, [searchImageState])
+    }, [searchImageState])*/
 
     return (
         <div className="searchPage">
