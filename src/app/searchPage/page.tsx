@@ -3,16 +3,18 @@ import "./page.css";
 import { useEffect, useState } from "react";
 import PhotosService from "../../services/Photos.service";
 import Image from "next/image";
+import ListImages from "@/components/ListImages";
 
 export default function Page() {
     const [searchImageState, setSearchImageState] = useState("");
-
+    const [gallery, setGallery] = useState([]);
     const handleSubmit = (e: any) => {
         e.preventDefault();
         PhotosService
             .getPhotos(searchImageState)
             .then((res) => {
-                console.log(res);
+                console.log(res.results)
+                setGallery(res.results);
             })
             .catch((err) => console.log(err))
             .finally(() => { });
@@ -20,15 +22,6 @@ export default function Page() {
     const handleChange = (e: any) => {
         setSearchImageState(e.target.value);
     }
-    /*useEffect(() => {
-        searchImageState && PhotosService
-            .getPhotos(searchImageState)
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => console.log(err))
-            .finally(() => { });
-    }, [searchImageState])*/
 
     return (
         <div className="searchPage">
@@ -40,6 +33,9 @@ export default function Page() {
                 <form onSubmit={handleSubmit}>
                     <input className="searchPage_input text-[#E5E7EB] text-[16px] font-medium" type="text" name="name" placeholder="Enter your keywords..." onChange={handleChange} />
                 </form>
+                {
+                    gallery.length > 0 && <ListImages gallery={gallery} />
+                }
             </div>
         </div>
     );
