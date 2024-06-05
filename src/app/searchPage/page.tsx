@@ -3,7 +3,7 @@ import "./page.css";
 import { useEffect, useState } from "react";
 import PhotosService from "../../services/Photos.service";
 import Image from "next/image";
-import ListImages from "@/components/ListImages";
+import ListImages from "../../components/ListImages";
 
 export default function Page() {
     const [searchImageState, setSearchImageState] = useState("");
