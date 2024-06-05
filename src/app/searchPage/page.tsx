@@ -22,7 +22,6 @@ export default function Page() {
     const handleChange = (e: any) => {
         setSearchImageState(e.target.value);
     }
-
     return (
         <div className="searchPage">
             <div className="searchPage_title flex flex-col items-center mt-[240px]">
