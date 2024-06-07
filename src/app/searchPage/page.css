@@ -24,6 +24,11 @@
     outline: none;
 }
 
+.searchPage_imageTop {
+    background: url('../../../public/images/gradiend-bg@2x.png') no-repeat center;
+    background-size: cover;
+}
+
 @media screen and (max-width: 640px) {
     .searchPage_input {
         width: 80vw;

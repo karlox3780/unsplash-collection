@@ -25,7 +25,8 @@ export default function Page() {
     }
     return (
         <div className={`${search ? "!bg-none " : ""}searchPage overflow-x-hidden`}>
-            <div className="searchPage_title flex flex-col items-center mt-[240px]">
+            <div className={`searchPage_title flex flex-col items-center ${search ? "mt-[50px] " : "mt-[240px]"}`}>
+                <div className="searchPage_imageTop absolute top-0 w-full h-[100px]"></div>
                 <Image className="searchPage_background_left_mobile" src='/images/hero-left.png' alt="Mobile background left image" height={797} width={537} />
                 <Image className="searchPage_background_right_mobile" src='/images/hero-right.png' alt="Mobile background right image" height={797} width={537} />
                 <div className={`${search ? "hidden " : ""}text-center`}>
