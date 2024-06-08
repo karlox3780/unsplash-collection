@@ -7,7 +7,9 @@
 }
 
 .searchPage_input {
-    background: url('../../../public/images/Search.svg') no-repeat 98%;
+    background-image: url('../../../public/images/Search.svg');
+    background-repeat: no-repeat;
+    background-position: 98%;
     border-radius: 8px;
     border: 1px solid #E5E7EB;
     width: 40vw;
