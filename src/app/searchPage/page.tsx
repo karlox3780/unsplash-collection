@@ -1,7 +1,7 @@
 "use client"
 import "./page.css";
 import { useEffect, useState } from "react";
-import PhotosService from "../../services/Photos.service";
+import SearchService from "../../services/Search.service";
 import Image from "next/image";
 import ListImages from "../../components/ListImages";
 
@@ -12,7 +12,7 @@ export default function Page() {
     const handleSubmit = (e: any) => {
         e.preventDefault();
         e.stopPropagation();
-        PhotosService
+        SearchService
             .getPhotos(searchImageState)
             .then((res) => {
                 console.log(res.results)
