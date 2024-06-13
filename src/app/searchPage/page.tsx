@@ -41,6 +41,6 @@ export default function Page() {
                     gallery.length > 0 && <ListImages gallery={gallery} />
                 }
             </div>
-        </div >
+        </div>
     );
 }
