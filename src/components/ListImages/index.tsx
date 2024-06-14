@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 type Props = {
     gallery: any
 }
@@ -10,7 +11,7 @@ export default function ListImages({ gallery }: Props) {
                 gallery.map((image: any, index: any) => {
                     return (
                         <div key={image.id} className="mb-[24px] break-inside-avoid">
-                            <Image className="h-auto max-w-full rounded-lg w-[100%]" src={image.urls.full} alt={image.alt_description} width={500} height={500} />
+                            <Link href={`/imageDetail/${image.id}`}><Image className="h-auto max-w-full rounded-lg w-[100%]" src={image.urls.full} alt={image.alt_description} width={500} height={500} /></Link>
                         </div>
                     )
                 })
