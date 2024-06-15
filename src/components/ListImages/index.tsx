@@ -11,7 +11,7 @@ export default function ListImages({ gallery }: Props) {
                 gallery.map((image: any, index: any) => {
                     return (
                         <div key={image.id} className="mb-[24px] break-inside-avoid">
-                            <Link href={`/imageDetail/${image.id}`}><Image className="h-auto max-w-full rounded-lg w-[100%]" src={image.urls.full} alt={image.alt_description} width={500} height={500} /></Link>
+                            <Link href={`/imageDetail/${image.id}`}><Image className="h-auto max-w-full rounded-lg w-[100%]" src={image.urls.regular} alt={image.alt_description} width={500} height={500} /></Link>
                         </div>
                     )
                 })
