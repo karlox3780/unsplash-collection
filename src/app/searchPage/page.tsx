@@ -1,7 +1,7 @@
 "use client"
 import "./page.css";
 import { useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import SearchService from "../../services/Search.service";
 import ListImages from "../../components/ListImages";
@@ -24,8 +24,14 @@ export default function Page() {
                     setGallery(res.results);
                 })
                 .catch((err) => console.log(err))
-                .finally(() => { setLoading(false); })
+                .finally(() => {
+                    const input = document.getElementById("search") as HTMLInputElement;
+                    if (input) input.value = query;
+                });
+            setLoading(false);
         } else {
+            const input = document.getElementById("search") as HTMLInputElement;
+            if (input) input.value = "";
             setSearch(false);
             setGallery([]);
             setLoading(false);
@@ -60,7 +66,7 @@ export default function Page() {
                     <h2 className="text-[#121826] text-[16px] font-medium mt-[8px]">Search high-resolution images from Unsplash</h2>
                 </div>
                 <form className="mb-[48px]" onSubmit={handleSubmit}>
-                    <input className="searchPage_input text-[#E5E7EB] text-[16px] font-medium bg-[#FFFFFF] focus:bg-[#FFFFFF]" type="text" name="name" defaultValue={query ? query : ""} placeholder="Enter your keywords..." onChange={handleChange} />
+                    <input className="searchPage_input text-[#E5E7EB] text-[16px] font-medium bg-[#FFFFFF] focus:bg-[#FFFFFF]" id="search" type="text" name="search" placeholder="Enter your keywords..." onChange={handleChange} />
                 </form>
                 {
                     gallery.length > 0 && <ListImages gallery={gallery} />
