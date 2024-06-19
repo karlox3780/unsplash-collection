@@ -1,4 +1,5 @@
 "use client"
+import moment from 'moment';
 import './page.css';
 import PhotosService from "@/services/Photos.service";
 import Image from "next/image";
@@ -28,7 +29,10 @@ export default function Page() {
             <div className='w-[50%] ml-[30px]'>
                 <div className='flex items-center'>
                     <Image className="rounded-full" src={photo.user.profile_image.medium} height={40} width={40} alt={photo.user.name} />
-                    <label className='ml-[10px] text-[#121826]'>{photo.user.name}</label>
+                    <label className='ml-[10px] text-[#121826] text-[14px] font-medium'>{photo.user.name}</label>
+                </div>
+                <div className='mt-[10px]'>
+                    <label className='text-[#121826] text-[12px] font-medium'>{`Published on ${moment(photo.created_at).format('LL')}`}</label>
                 </div>
             </div>
         </div>
