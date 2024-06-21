@@ -5,6 +5,7 @@ import PhotosService from "@/services/Photos.service";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 export default function Page() {
     const router = useParams();
@@ -36,7 +37,10 @@ export default function Page() {
                 </div>
                 <div className='mt-[15px]'>
                     <button type="button" className="text-[#121826] text-[14px] bg-[#E5E7EB] hover:bg-[#E5E7EB] focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2">Add to Collection</button>
-                    <button type="button" className="text-[#121826] text-[14px] bg-[#E5E7EB] hover:bg-[#E5E7EB] focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2">Download</button>
+                    <Link href={`${photo.links.download}&force=true`} rel='nofollow' download target='_blank'>
+                        <button type="button" className="text-[#121826] text-[14px] bg-[#E5E7EB] hover:bg-[#E5E7EB] focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 me-2 mb-2">
+                            Download</button>
+                    </Link>
                 </div>
             </div>
         </div>
