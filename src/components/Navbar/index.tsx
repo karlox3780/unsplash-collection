@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+    const pathname = usePathname();
     return (
         <nav className="bg-transparent border-gray-200 dark:bg-transparent border-b-[1px]">
             <div className="flex flex-wrap items-center justify-between mx-auto px-[32px] py-[10px]">
@@ -17,9 +20,9 @@ export default function Navbar() {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="font-medium flex p-4">
                         <li>
-                            <a href="#" className="block py-2 px-3 text-[#121826]" aria-current="page">
+                            <Link href="/searchPage" className={`block py-2 px-[20px] rounded text-[#121826] ${pathname.includes("searchPage") ? 'bg-[#e5e7eb]' : ''}`} aria-current="page">
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a href="#" className="block py-2 px-3 text-[#121826]">

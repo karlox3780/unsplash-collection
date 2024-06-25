@@ -36,7 +36,7 @@ export default function Page() {
                     <label className='text-[#121826] text-[12px] font-medium'>{`Published on ${moment(photo.created_at).format('LL')}`}</label>
                 </div>
                 <div className='mt-[15px]'>
-                    <button type="button" className="text-[#121826] text-[14px] bg-[#E5E7EB] hover:bg-[#E5E7EB] font-medium rounded otext-sm px-5 py-2.5 mb-2 mr-[20px]">Add to Collection</button>
+                    <button disabled type="button" className="text-[#121826] text-[14px] bg-[#E5E7EB] hover:bg-[#E5E7EB] font-medium rounded otext-sm px-5 py-2.5 mb-2 mr-[20px]">Add to Collection</button>
                     <Link href={`${photo.links.download}&force=true`} rel='nofollow' download target='_blank'>
                         <button type="button" className="text-[#121826] text-[14px] bg-[#E5E7EB] hover:bg-[#E5E7EB] font-medium rounded text-sm px-5 py-2.5 me-2 mb-2">
                             Download</button>
