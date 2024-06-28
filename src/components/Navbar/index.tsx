@@ -20,14 +20,14 @@ export default function Navbar() {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="font-medium flex p-4">
                         <li>
-                            <Link href="/searchPage" className={`block py-2 px-[20px] rounded text-[#121826] ${pathname.includes("searchPage") ? 'bg-[#e5e7eb]' : ''}`} aria-current="page">
+                            <Link href="/searchPage" className={`block py-2 px-[20px] rounded text-[#121826] ${pathname.includes("searchPage") && 'bg-[#e5e7eb]'}`} aria-current="page">
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <a href="#" className="block py-2 px-3 text-[#121826]">
+                            <Link href="/collections" className={`block py-2 px-3 rounded text-[#121826] ${pathname.includes("collections") && 'bg-[#e5e7eb]'}`}>
                                 Collections
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
