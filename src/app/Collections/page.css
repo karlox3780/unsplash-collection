@@ -1,0 +1,6 @@
+.collections_title {
+    background-image: url(../../../public/images/gradiend-bg@2x.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
