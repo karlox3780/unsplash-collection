@@ -15,12 +15,19 @@ const ModalAddCollection = ({ onClose }: Props) => {
     const ref = useRef<any>(null);
 
     useEffect(() => {
+        const handleESCButton = (event: any) => {
+            if (event.keyCode == 27) {
+                onClose();
+            }
+        };
+
         const handleOutSideClick = (event: any) => {
             if (!ref.current?.contains(event.target)) {
                 onClose();
             }
         };
 
+        window.addEventListener('keydown', handleESCButton);
         window.addEventListener("mousedown", handleOutSideClick);
 
         return () => {
@@ -54,7 +61,7 @@ const ModalAddCollection = ({ onClose }: Props) => {
                                     name="title" type="text" placeholder="Enter a Collection Name" onChange={handleChange} required />
                             </div>
                             <div className="bottom-buttons flex justify-center mt-[20px] text-[#fff]">
-                                <button className="bg-[#97A3B6] flex px-[30px] py-[10px] rounded-[22px] cursor-pointer" onClick={handleSubmit}>
+                                <button className="bg-[#97A3B6] flex px-[30px] py-[10px] rounded cursor-pointer" onClick={handleSubmit}>
                                     <label className="mr-[5px] text-[14px] cursor-pointer">Create</label>
                                 </button>
                             </div>
