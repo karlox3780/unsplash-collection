@@ -33,7 +33,7 @@ export default function Page() {
             {
                 !loading && collections !== undefined ?
                     <main className="w-full mt-4 grid gap-4 justify-center items-center grid-cols-[repeat(auto-fill,min(25rem,100%))] auto-rows-[18rem]">
-                        {collections.map((collection, index) => <GridCollections id={collection.id} src={collection.preview_photos} title={collection.title} total={collection.total} key={collection.id + index} />)}
+                        {collections.map((collection, index) => <GridCollections id={collection.id} src={collection.preview_photos} title={collection.title} total={collection.total_photos} key={collection.id + index} />)}
                     </main>
 
                     :

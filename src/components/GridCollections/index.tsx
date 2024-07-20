@@ -27,8 +27,8 @@ export default function GridCollections({ id, src, title, total = 0 }: Props) {
                 </div>}
             </Link>
             <div>
-                <h1 className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap">{title}</h1>
-                <h2>{total} {total === 1 ? 'photo' : 'photos'}</h2>
+                <h1 className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-medium text-[16px] text-[#121826]">{title}</h1>
+                <h2 className="font-medium text-[12px] text-[#121826] mt-[5px]">{total} {total === 1 ? 'photo' : 'photos'}</h2>
             </div>
         </div>
     )
