@@ -9,6 +9,11 @@ class Users extends InitAxios {
             .then((response) => response.data)
             .catch(function (error) { console.log('Error', error.message); });
     }
+    getCollectionsPhotos(id: string) {
+        return this.axios.get('karlox3780/collections', { params: { id: id }, headers: { Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}` } })
+            .then((response) => response.data)
+            .catch(function (error) { console.log('Error', error.message); });
+    }
 }
 
 export default new Users();
