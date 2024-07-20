@@ -3,8 +3,11 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                hostname: 'images.unsplash.com',
+                hostname: 'images.unsplash.com'
             },
+            {
+                hostname: 'plus.unsplash.com'
+            }
         ],
     },
     async redirects() {
